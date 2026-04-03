@@ -416,8 +416,8 @@
         <div class="contact__form-wrap">
           <form class="contact__form" id="contactForm" novalidate>
             <div class="form-group">
-              <label for="name" class="form-label">Nama Lengkap</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama Anda" required />
+              <label for="name" class="form-label">Dari Email</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan Email Anda" required />
             </div>
             <div class="form-group">
               <label for="email" class="form-label">Alamat Email</label>
@@ -475,5 +475,23 @@
 
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("wWYV9Ro9dyAYIulJe"); // ganti
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_u7exgwh", "template_le35np6", this)
+  .then(function() {
+    document.getElementById("formSuccess").style.display = "block";
+  }, function(error) {
+    alert("Gagal mengirim pesan: " + error.text);
+  });
+});
+</script>
 </body>
 </html>
+
