@@ -346,18 +346,3 @@
 })();
 
 // untuk mengirim email, saya menggunakan emailjs, jadi pastikan untuk mengganti 'YOUR_SERVICE 
-
-(function(){
-  emailjs.init("service_u7exgwh"); // ganti
-})();
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", this)
-    .then(function() {
-      document.getElementById("formSuccess").style.display = "block";
-    }, function(error) {
-      alert("Gagal mengirim pesan: " + error.text);
-    });
-});
