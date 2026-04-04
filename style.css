@@ -576,7 +576,7 @@ body {
 }
 
 .about__img-wrap:hover img {
-  box-shadow: 
+  box-shadow : 
     0 20px 40px rgba(0,0,0,0.3),
     0 0 30px rgba(37, 99, 235, 0.4);
 }
