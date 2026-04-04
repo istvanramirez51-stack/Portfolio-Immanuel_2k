@@ -476,6 +476,8 @@
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+<!-- ini untuk fungsi kirim email, pastikan sudah buat akun di emailjs.com dan buat service serta template email sesuai kebutuhan, lalu ganti user ID, service ID, dan template ID pada kode berikut -->
+
 <script>
   (function(){
     emailjs.init("wWYV9Ro9dyAYIulJe"); // ganti
@@ -491,6 +493,34 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     alert("Gagal mengirim pesan: " + error.text);
   });
 });
+</script>
+
+<!-- ini untuk efek 3D pada gambar di bagian about, bisa disesuaikan dengan gambar lain atau elemen lain sesuai kebutuhan -->
+
+<script>
+  const card = document.querySelector(".about__img-wrap img");
+
+  card.addEventListener("mousemove", (e) => {
+   const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const midX = rect.width / 2;
+    const midY = rect.height / 2;
+
+    const rotateY = ((x - midX) / midX) * 10; // rotasi maksimal 10 derajat
+    const rotateX = ((midY - y) / midY) * 10;
+
+    card.style.transform = `
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.05)
+    `;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+  });
 </script>
 </body>
 </html>
