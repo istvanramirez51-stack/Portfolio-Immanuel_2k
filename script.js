@@ -5,6 +5,60 @@
  */
 
 /* ─────────────────────────────────────
+   0. LOADING SCREEN
+───────────────────────────────────── */
+(function initLoader() {
+  const loader  = document.getElementById('loader');
+  const bar     = document.getElementById('loaderBar');
+  const text    = document.getElementById('loaderText');
+  if (!loader || !bar) return;
+
+  const messages = ['Memuat portofolio...', 'Menyiapkan tampilan...', 'Hampir selesai...'];
+  let progress   = 0;
+  let msgIdx     = 0;
+
+  // Tick progress bar
+  const interval = setInterval(() => {
+    // Accelerate near end
+    const step = progress < 70 ? Math.random() * 8 + 4
+               : progress < 90 ? Math.random() * 3 + 1
+               : 0.5;
+
+    progress = Math.min(progress + step, 98);
+    bar.style.width = progress + '%';
+
+    // Cycle messages
+    const newIdx = progress < 40 ? 0 : progress < 80 ? 1 : 2;
+    if (newIdx !== msgIdx) {
+      msgIdx = newIdx;
+      if (text) text.textContent = messages[msgIdx];
+    }
+  }, 80);
+
+  // Hide loader once page is fully loaded
+  function hideLoader() {
+    clearInterval(interval);
+    bar.style.width = '100%';
+    if (text) text.textContent = 'Selesai!';
+    setTimeout(() => {
+      loader.classList.add('hide');
+      document.body.style.overflow = '';
+    }, 400);
+  }
+
+  // Lock scroll during load
+  document.body.style.overflow = 'hidden';
+
+  if (document.readyState === 'complete') {
+    hideLoader();
+  } else {
+    window.addEventListener('load', hideLoader);
+    // Fallback: hide after 4s regardless
+    setTimeout(hideLoader, 4000);
+  }
+})();
+
+/* ─────────────────────────────────────
    1. THEME TOGGLE (Dark / Light)
 ───────────────────────────────────── */
 (function initTheme() {
@@ -345,4 +399,4 @@
   animate();
 })();
 
-// untuk mengirim email, saya menggunakan emailjs, jadi pastikan untuk mengganti 'YOUR_SERVICE 
+// untuk mengirim email, saya menggunakan emailjs, jadi pastikan untuk mengganti 'YOUR_SERVICE
