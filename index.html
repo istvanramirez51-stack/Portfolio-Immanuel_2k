@@ -40,6 +40,9 @@
       <a href="#about"    class="sidebar__link" data-tip="Tentang">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </a>
+      <a href="#journey"  class="sidebar__link" data-tip="Journey">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </a>
       <a href="#skills"   class="sidebar__link" data-tip="Skills">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </a>
@@ -137,7 +140,8 @@
             Hi' nama saya <span class="accent">Raja Imanuel Sitorus.</span> dan Saya adalah seorang <span class="accent2">UI/UX Designer dan Front-End Developer junior</span> dengan semangat tinggi dalam menciptakan pengalaman digital yang bermakna. Latar belakang saya di desain antarmuka membantu saya memahami kebutuhan pengguna secara mendalam.
           </p>
           <p class="about__text">
-            Dengan menggabungkan estetika visual dan kemampuan coding, saya berusaha menghadirkan solusi yang tidak hanya terlihat indah tetapi juga berfungsi dengan baik. Saya terus belajar dan berkembang mengikuti tren teknologi terkini.
+            Saya lulusan SMA Taman Siswa P.Siantar pada tahun 2023 yang memiliki ketertarikan besar di bidang teknologi, khususnya dalam menggabungkan estetika visual dengan kemampuan coding. Saya berusaha menghadirkan solusi digital yang tidak hanya menarik secara tampilan, tetapi juga optimal dalam fungsi dan pengalaman pengguna.
+            Di luar itu, saya memiliki hobi belajar desain UI/UX, eksplorasi tren teknologi terbaru, serta mencoba membangun proyek website sederhana untuk terus mengasah kemampuan. Saya juga senang mengikuti perkembangan dunia digital dan beradaptasi dengan teknologi baru agar terus berkembang.
           </p>
           <div class="about__stats">
             <div class="about__stat">
@@ -158,15 +162,76 @@
       </div>
         <div class="marquee-wrap">
           <div class="marquee">
-            <span>My Portfolio • Skills &nbsp;&nbsp;&nbsp;</span>
-            <span>My Portfolio • Skills &nbsp;&nbsp;&nbsp;</span>
-            <span>My Portfolio • Skills &nbsp;&nbsp;&nbsp;</span>
-            <span>My Portfolio • Skills &nbsp;&nbsp;&nbsp;</span>
-            <span>My Portfolio • Skills &nbsp;&nbsp;&nbsp;</span>
-            <span>My Portfolio • Skills &nbsp;&nbsp;&nbsp;</span>
-            <span>My Portfolio • Skills &nbsp;&nbsp;&nbsp;</span>
-            <span>My Portfolio • Skills &nbsp;&nbsp;&nbsp;</span>
+            <span>My Portfolio • About &nbsp;&nbsp;&nbsp;</span>
+            <span>My Portfolio • About &nbsp;&nbsp;&nbsp;</span>
+            <span>My Portfolio • About &nbsp;&nbsp;&nbsp;</span>
+            <span>My Portfolio • About &nbsp;&nbsp;&nbsp;</span>
+            <span>My Portfolio • About &nbsp;&nbsp;&nbsp;</span>
+            <span>My Portfolio • About &nbsp;&nbsp;&nbsp;</span>
+            <span>My Portfolio • About &nbsp;&nbsp;&nbsp;</span>
+            <span>My Portfolio • About &nbsp;&nbsp;&nbsp;</span>
           </div>
+        </div>
+    </section>
+
+    <!-- ===== JOURNEY ===== -->
+    <section class="journey section" id="journey">
+      <div class="journey__bg-text" aria-hidden="true">Journey</div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title text-center">My <span class="accent">Journey.</span></h2>
+          <p class="section-subtitle text-center">Dari nol hingga menjadi Front-End Developer Junior — satu lompatan dalam satu waktu.</p>
+        </div>
+
+        <div class="journey__game-wrap">
+
+          <!-- Top HUD Bar -->
+          <div class="journey__hud">
+            <div class="journey__hud-left">
+              <span class="journey__hud-label">CHECKPOINT</span>
+              <span class="journey__hud-val" id="journeyCheckpoint">0 / 7</span>
+            </div>
+            <div class="journey__hud-center" id="journeyDots"></div>
+            <div class="journey__hud-right">
+              <span class="journey__hud-status" id="journeyStatus">● IDLE</span>
+            </div>
+          </div>
+
+          <!-- Canvas game -->
+          <div class="journey__canvas-wrap">
+            <canvas id="journeyCanvas" class="journey__canvas"></canvas>
+
+            <!-- Milestone popup (floats over canvas) -->
+            <div class="journey__popup" id="journeyPopup">
+              <div class="journey__popup-year" id="popupYear"></div>
+              <div class="journey__popup-icon" id="popupIcon"></div>
+              <strong class="journey__popup-title" id="popupTitle"></strong>
+              <p class="journey__popup-desc" id="popupDesc"></p>
+              <span class="journey__popup-tag" id="popupTag"></span>
+            </div>
+          </div>
+
+          <!-- Bottom hint -->
+          <div class="journey__footer">
+            <span class="journey__hint">SPACE / KLIK / TAP untuk loncat — hindari semua rintangan! 🎮</span>
+            <span class="journey__speed-label">SPEED ▶▶</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="marquee-wrap">
+        <div class="marquee">
+          <span>My Journey • Level Up &nbsp;&nbsp;&nbsp;</span>
+          <span>My Journey • Level Up &nbsp;&nbsp;&nbsp;</span>
+          <span>My Journey • Level Up &nbsp;&nbsp;&nbsp;</span>
+          <span>My Journey • Level Up &nbsp;&nbsp;&nbsp;</span>
+          <span>My Journey • Level Up &nbsp;&nbsp;&nbsp;</span>
+          <span>My Journey • Level Up &nbsp;&nbsp;&nbsp;</span>
+          <span>My Journey • Level Up &nbsp;&nbsp;&nbsp;</span>
+          <span>My Journey • Level Up &nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
     </section>
 
     <!-- ===== SKILLS ===== -->
