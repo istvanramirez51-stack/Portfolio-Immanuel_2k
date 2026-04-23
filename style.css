@@ -854,88 +854,96 @@ body {
 /* contoh: src="images/foto-skills.png" */
 
 /* Right column */
-.skills__right { flex: 1; min-width: 0; }
+.skills__right {
+  flex: 1;
+  min-width: 0;
+}
 
 .skills__desc {
-  color      : var(--text-secondary);
-  font-size  : 0.95rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   line-height: 1.8;
   margin-bottom: 2rem;
 }
 
 .skills__bars {
-  display    : flex;
+  display: flex;
   flex-direction: column;
-  gap        : 1.2rem;
+  gap: 1.2rem;
 }
 
 /* Skill bar */
 .skill-bar {
-  background : var(--card-bg);
-  border     : 1px solid var(--card-border);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
-  padding    : 0.9rem 1.2rem;
-  transition : border-color var(--transition), box-shadow var(--transition);
+  padding: 0.9rem 1.2rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .skill-bar:hover {
   border-color: var(--accent);
-  box-shadow  : 0 0 16px var(--accent-glow);
+  box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .skill-bar__header {
-  display    : flex;
+  display: flex;
   align-items: center;
-  gap        : 0.75rem;
+  gap: 0.75rem;
   margin-bottom: 0.6rem;
 }
 
 .skill-bar__icon {
-  width      : 32px;
-  height     : 32px;
+  width: 32px;
+  height: 32px;
   border-radius: 6px;
-  display    : flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.skill-bar__icon svg { width: 18px; height: 18px; }
+/* Ikon Font Awesome di dalam kotak */
+.skill-bar__icon i {
+  font-size: 18px;          /* Sesuaikan ukuran ikon */
+  color: inherit;           /* Ikuti warna teks dari kelas induk */
+}
 
+/* Latar dan warna teks untuk tiap ikon */
 .skill-bar__icon--html  { background: #e34c26; color: #fff; }
 .skill-bar__icon--css   { background: #264de4; color: #fff; }
 .skill-bar__icon--js    { background: #f7df1e; color: #000; }
 .skill-bar__icon--figma { background: #f24e1e; color: #fff; }
-.skill-bar__icon--react { background: #61dafb; color: #000; }
+.skill-bar__icon--git   { background: #f05032; color: #fff; } /* Git belum ada, saya tambahkan */
 
 .skill-bar__name {
-  flex       : 1;
+  flex: 1;
   font-weight: 600;
-  font-size  : 0.9rem;
-  color      : var(--text-primary);
+  font-size: 0.9rem;
+  color: var(--text-primary);
 }
 
 .skill-bar__pct {
-  font-size  : 0.85rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  color      : var(--accent);
+  color: var(--accent);
   font-family: var(--font-mono);
 }
 
 .skill-bar__track {
-  height     : 8px;
-  background : var(--bg-secondary);
+  height: 8px;
+  background: var(--bg-secondary);
   border-radius: var(--radius-full);
-  overflow   : hidden;
+  overflow: hidden;
 }
 
 .skill-bar__fill {
-  height     : 100%;
-  background : linear-gradient(90deg, var(--accent-2), var(--accent));
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
   border-radius: var(--radius-full);
-  width      : 0%;
-  transition : width 1.2s cubic-bezier(.4,0,.2,1);
-  box-shadow : 0 0 8px var(--accent-glow);
+  width: 0%;
+  transition: width 1.2s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 /* ─────────────────────────
