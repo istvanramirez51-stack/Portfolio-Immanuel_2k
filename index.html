@@ -32,7 +32,18 @@
   <!-- ===== SIDEBAR NAV ===== -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__logo">
-      <span>R</span>
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer hexagon -->
+        <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+        <!-- Inner glow hexagon -->
+        <polygon points="18,6 29,12.5 29,23.5 18,30 7,23.5 7,12.5" fill="rgba(255,255,255,0.08)"/>
+        <!-- "I" monogram -->
+        <text x="18" y="23" text-anchor="middle" font-family="'Space Mono', monospace" font-weight="700" font-size="16" fill="white" letter-spacing="-1">Im</text>
+        <!-- Top accent dot -->
+        <circle cx="18" cy="4" r="2" fill="rgba(255,255,255,0.6)"/>
+        <!-- Bottom accent dot -->
+        <circle cx="18" cy="32" r="2" fill="rgba(255,255,255,0.6)"/>
+      </svg>
     </div>
     <nav class="sidebar__nav">
       <a href="#hero"     class="sidebar__link active" data-tip="Beranda">
@@ -175,7 +186,7 @@
         </div>
     </section>
 
-    <!-- ===== JOURNEY ===== -->
+        <!-- ===== JOURNEY ===== -->
     <section class="journey section" id="journey">
       <div class="journey__bg-text" aria-hidden="true">Journey</div>
       <div class="container">
@@ -202,13 +213,15 @@
           <div class="journey__canvas-wrap">
             <canvas id="journeyCanvas" class="journey__canvas"></canvas>
 
-            <!-- Milestone popup (floats over canvas) -->
+            <!-- Milestone popup (floats over canvas on desktop, below canvas on mobile) -->
             <div class="journey__popup" id="journeyPopup">
-              <div class="journey__popup-year" id="popupYear"></div>
-              <div class="journey__popup-icon" id="popupIcon"></div>
-              <strong class="journey__popup-title" id="popupTitle"></strong>
-              <p class="journey__popup-desc" id="popupDesc"></p>
-              <span class="journey__popup-tag" id="popupTag"></span>
+              <div class="journey__popup-inner">
+                <div class="journey__popup-year" id="popupYear"></div>
+                <div class="journey__popup-icon" id="popupIcon"></div>
+                <strong class="journey__popup-title" id="popupTitle"></strong>
+                <p class="journey__popup-desc" id="popupDesc"></p>
+                <span class="journey__popup-tag" id="popupTag"></span>
+              </div>
             </div>
           </div>
 
@@ -237,99 +250,89 @@
 
     <!-- ===== SKILLS ===== -->
     <section class="skills section" id="skills">
-  <div class="skills__bg-text" aria-hidden="true">My Skills</div>
-  <div class="container skills__inner">
-    <div class="skills__left">
-      <div class="skills__illustration">
-        <img
-          src="image/erasebg-transformed.png"
-          alt="Skills illustration"
-          class="skills__illus-img"
-        />
+      <div class="skills__bg-text" aria-hidden="true">My Skills</div>
+      <div class="container skills__inner">
+        <div class="skills__left">
+          <div class="skills__illustration">
+            <img
+              src="image/erasebg-transformed.png"
+              alt="Skills illustration"
+              class="skills__illus-img"
+            />
+          </div>
+          <a href="#projects" class="btn btn--primary">View My Project</a>
+        </div>
+        <div class="skills__right">
+          <h2 class="section-title">My <span class="accent">Skills.</span></h2>
+          <p class="skills__desc">
+            Sebagai seorang <span class="accent2">Front-End Developer junior</span>, saya memiliki pemahaman dasar hingga menengah dalam membangun tampilan website yang interaktif dan responsif. Saya umumnya menguasai teknologi inti seperti <span class="accent-html">HTML</span> untuk struktur, <span class="accent-css">CSS</span> untuk styling, serta <span class="accent-js">JavaScript</span> untuk menambahkan interaktivitas.
+          </p>
+          <div class="skills__bars">
+
+            <!-- 1. HTML5 — 69% -->
+            <div class="skill-bar" data-percent="69" data-skill="html">
+              <div class="skill-bar__header">
+                <div class="skill-bar__icon skill-bar__icon--html">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+                </div>
+                <span class="skill-bar__name">HTML5</span>
+                <span class="skill-bar__pct">69%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+            </div>
+
+            <!-- 2. Figma — 60% -->
+            <div class="skill-bar" data-percent="60" data-skill="figma">
+              <div class="skill-bar__header">
+                <div class="skill-bar__icon skill-bar__icon--figma">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.026-4.49 4.515-4.49c2.489 0 4.515 2.014 4.515 4.49S10.661 24 8.172 24zm0-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.354-3.019-3.019-3.019zm7.679.004h-.05c-2.447 0-4.415-2.014-4.415-4.49s1.968-4.49 4.415-4.49h.05c2.447 0 4.415 2.014 4.415 4.49s-1.968 4.49-4.415 4.49zm-.05-7.509c-1.655 0-2.945 1.355-2.945 3.019s1.29 3.019 2.945 3.019h.05c1.655 0 2.945-1.355 2.945-3.019s-1.29-3.019-2.945-3.019h-.05z"/></svg>
+                </div>
+                <span class="skill-bar__name">Figma</span>
+                <span class="skill-bar__pct">60%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+            </div>
+
+            <!-- 3. Git — 55% -->
+            <div class="skill-bar" data-percent="55" data-skill="git">
+              <div class="skill-bar__header">
+                <div class="skill-bar__icon skill-bar__icon--git">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.608-.406-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+                </div>
+                <span class="skill-bar__name">Git</span>
+                <span class="skill-bar__pct">55%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+            </div>
+
+            <!-- 4. CSS — 47% -->
+            <div class="skill-bar" data-percent="47" data-skill="css">
+              <div class="skill-bar__header">
+                <div class="skill-bar__icon skill-bar__icon--css">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.003-.238 2.010-6.664.001.144 2.609h6.38l-.304 2.81-3.079.867-3.085-.868-.197-2.21h-2.6l.359 4.421 5.526 1.507 5.533-1.509.938-10.262z"/></svg>
+                </div>
+                <span class="skill-bar__name">CSS3</span>
+                <span class="skill-bar__pct">47%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+            </div>
+
+            <!-- 5. JavaScript — 40% -->
+            <div class="skill-bar" data-percent="40" data-skill="js">
+              <div class="skill-bar__header">
+                <div class="skill-bar__icon skill-bar__icon--js">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+                </div>
+                <span class="skill-bar__name">JavaScript</span>
+                <span class="skill-bar__pct">40%</span>
+              </div>
+              <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+            </div>
+
+            
+          </div>
+        </div>
       </div>
-      <a href="#projects" class="btn btn--primary">View My Project</a>
-    </div>
-    <div class="skills__right">
-      <h2 class="section-title">My <span class="accent">Skills.</span></h2>
-      <p class="skills__desc">
-        Sebagai seorang <span class="accent2">Front-End Developer junior</span>, saya memiliki pemahaman dasar hingga menengah dalam membangun tampilan website yang interaktif dan responsif. Saya umumnya menguasai teknologi inti seperti <span class="accent-html">HTML</span> untuk struktur, <span class="accent-css">CSS</span> untuk styling, serta <span class="accent-js">JavaScript</span> untuk menambahkan interaktivitas.
-      </p>
-      <div class="skills__bars">
-
-        <!-- 1. HTML5 — 69% -->
-        <div class="skill-bar" data-percent="69">
-          <div class="skill-bar__header">
-            <div class="skill-bar__icon skill-bar__icon--html">
-              <i class="fab fa-html5"></i>
-            </div>
-            <span class="skill-bar__name">HTML5</span>
-            <span class="skill-bar__pct">69%</span>
-          </div>
-          <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-        </div>
-
-        <!-- 2. Figma — 60% -->
-        <div class="skill-bar" data-percent="60">
-          <div class="skill-bar__header">
-            <div class="skill-bar__icon skill-bar__icon--figma">
-              <i class="fab fa-figma"></i>
-            </div>
-            <span class="skill-bar__name">Figma</span>
-            <span class="skill-bar__pct">60%</span>
-          </div>
-          <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-        </div>
-
-        <!-- 3. Git — 78% -->
-        <div class="skill-bar" data-percent="78">
-          <div class="skill-bar__header">
-            <div class="skill-bar__icon skill-bar__icon--git">
-              <i class="fab fa-git-alt"></i>
-            </div>
-            <span class="skill-bar__name">Git</span>
-            <span class="skill-bar__pct">78%</span>
-          </div>
-          <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-        </div>
-
-        <!-- 4. CSS — 47% -->
-        <div class="skill-bar" data-percent="47">
-          <div class="skill-bar__header">
-            <div class="skill-bar__icon skill-bar__icon--css">
-              <i class="fab fa-css3-alt"></i>
-            </div>
-            <span class="skill-bar__name">CSS3</span>
-            <span class="skill-bar__pct">47%</span>
-          </div>
-          <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-        </div>
-
-        <!-- 5. JavaScript — 40% -->
-        <div class="skill-bar" data-percent="40">
-          <div class="skill-bar__header">
-            <div class="skill-bar__icon skill-bar__icon--js">
-              <i class="fab fa-js"></i>
-            </div>
-            <span class="skill-bar__name">JavaScript</span>
-            <span class="skill-bar__pct">40%</span>
-          </div>
-          <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-        </div>
-
-        <div class="skill-bar" data-percent="59">
-          <div class="skill-bar__header">
-            <div class="skill-bar__icon skill-bar__icon--php">
-              <i class="fab fa-php"></i>
-            </div>
-            <span class="skill-bar__name">PHP</span>
-            <span class="skill-bar__pct">59%</span>
-          </div>
-          <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-        </div>
-
-      </div>
-    </div>
-  </div>
 </section>
       <div class="marquee-wrap">
         <div class="marquee">
@@ -378,8 +381,8 @@
             <div class="project-card__img">
               <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=500&h=300&fit=crop" alt="E-commerce Shopping" loading="lazy" />
               <div class="project-card__overlay">
-                <a href="#" class="btn btn--sm">Live Demo</a>
-                <a href="#" class="btn btn--sm btn--outline">GitHub</a>
+                <a href="https://istvanramirez51-stack.github.io/E-commerce-Shopping/" class="btn btn--sm">Live Demo</a>
+                <a href="https://github.com/istvanramirez51-stack/E-commerce-Shopping" class="btn btn--sm btn--outline">GitHub</a>
               </div>
             </div>
 
@@ -396,15 +399,15 @@
 
           <article class="project-card">
             <div class="project-card__img">
-              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=500&h=300&fit=crop" alt="Coffee Shop" loading="lazy" />
+              <img src="image/porsikompak.png" alt="PorsiKompak" loading="lazy" />
               <div class="project-card__overlay">
-                <a href="#" class="btn btn--sm">Live Demo</a>
-                <a href="#" class="btn btn--sm btn--outline">GitHub</a>
+                <a href="https://istvanramirez51-stack.github.io/PorsiKompak/" class="btn btn--sm">Live Demo</a>
+                <a href="https://github.com/istvanramirez51-stack/PorsiKompak" class="btn btn--sm btn--outline">GitHub</a>
               </div>
             </div>
             <div class="project-card__body">
-              <h3 class="project-card__title">Coffee Shop</h3>
-              <p class="project-card__desc">Sebuah sistem pemesanan makanan online untuk kedai kopi.</p>
+              <h3 class="project-card__title">PorsiKompak</h3>
+              <p class="project-card__desc">Sebuah sistem pemesanan makanan online untuk Mahasiswa.</p>
               <div class="project-card__tags">
                 <span class="tag">html</span>
                 <span class="tag">css</span>
